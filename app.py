@@ -1,10 +1,12 @@
 import streamlit as st
+import streamlit_analytics  # Import Streamlit Analytics
 from src.chatbot import get_response
 from src.roast_mode import get_roast
 
 # Streamlit Page Config
 st.set_page_config(page_title="Roaster", page_icon="🔥", layout="wide")
 
+# Custom Styling
 st.markdown(
     """
     <style>
@@ -47,6 +49,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Start Tracking User Interactions with Analytics UI
+streamlit_analytics.start_tracking(unsafe_recording=True)
 
 # UI Header
 st.title("🔥Roast Time🔥")
@@ -70,3 +74,6 @@ st.markdown(
     "<p style='text-align: center; color: lightgrey;'>Powered by humor and a little bit of magic 😆|Developed by KRIS</p>", 
     unsafe_allow_html=True
 )
+
+# Stop Tracking User Interactions
+streamlit_analytics.stop_tracking()
