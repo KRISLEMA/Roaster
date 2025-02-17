@@ -1,12 +1,11 @@
 import streamlit as st
-import streamlit_analytics as sa  # Import Streamlit Analytics
 from src.chatbot import get_response
 from src.roast_mode import get_roast
 
 # Streamlit Page Config
-st.set_page_config(page_title="Roaster", page_icon="🔥", layout="wide")
+st.set_page_config(page_title="🔥Roast", page_icon="🔥", layout="wide")
 
-# Custom Styling
+# Custom CSS for Styling
 st.markdown(
     """
     <style>
@@ -49,27 +48,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Start Tracking User Interactions and Save to a Local Database
-with sa.track():
-    # UI Header
-    st.title("🔥Roast Time🔥")
-    st.write("Type 'Roast me' for a burn! 😂")
 
-    # Chat Input
-    user_input = st.text_input("You: ", "")
+# UI Header
+st.markdown("<h1 style='text-align: center; color: red;'>🔥 Roast 🔥</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Talk to the bot in ATL slang or type 'Roast me' for a burn! 😂</h3>", unsafe_allow_html=True)
 
-    if st.button("Send"):
-        if user_input.lower() == "roast me":
-            response = get_roast()
-        else:
-            response = get_response(user_input)
+# Chat Input
+user_input = st.text_input("You: ", "")
 
-        # Display Chatbot Response
-        st.write(f"🤖 **Chatbot:** {response}")
+if st.button("Send 🚀"):
+    if user_input.lower() == "roast me":
+        response = get_roast()
+    else:
+        response = get_response(user_input)
+
+    # Display Chatbot Response
+    st.markdown(f"🤖 **Chatbot:** {response}", unsafe_allow_html=True)
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown(
-    "<p style='text-align: center; color: lightgrey;'>Powered by humor and a little bit of magic 😆|Developed by KRIS</p>", 
-    unsafe_allow_html=True
-)
+st.markdown("<p style='text-align: center; font-size: 18px; color: white;'>Developed by KRIS | Love & Humor 💙</p>", unsafe_allow_html=True)
