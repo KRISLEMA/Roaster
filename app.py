@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_analytics  # Import Streamlit Analytics
+import streamlit_analytics as sa  # Import Streamlit Analytics
 from src.chatbot import get_response
 from src.roast_mode import get_roast
 
@@ -49,24 +49,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Start Tracking User Interactions with Analytics UI
-streamlit_analytics.start_tracking(unsafe_recording=True)
+# Start Tracking User Interactions and Save to a Local Database
+with sa.track():
+    # UI Header
+    st.title("🔥Roast Time🔥")
+    st.write("Type 'Roast me' for a burn! 😂")
 
-# UI Header
-st.title("🔥Roast Time🔥")
-st.write("Type 'Roast me' for a burn! 😂")
+    # Chat Input
+    user_input = st.text_input("You: ", "")
 
-# Chat Input
-user_input = st.text_input("You: ", "")
+    if st.button("Send"):
+        if user_input.lower() == "roast me":
+            response = get_roast()
+        else:
+            response = get_response(user_input)
 
-if st.button("Send"):
-    if user_input.lower() == "roast me":
-        response = get_roast()
-    else:
-        response = get_response(user_input)
-
-    # Display Chatbot Response
-    st.write(f"🤖 **Chatbot:** {response}")
+        # Display Chatbot Response
+        st.write(f"🤖 **Chatbot:** {response}")
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -74,6 +73,3 @@ st.markdown(
     "<p style='text-align: center; color: lightgrey;'>Powered by humor and a little bit of magic 😆|Developed by KRIS</p>", 
     unsafe_allow_html=True
 )
-
-# Stop Tracking User Interactions
-streamlit_analytics.stop_tracking()
