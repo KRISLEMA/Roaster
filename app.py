@@ -51,7 +51,7 @@ st.markdown(
 
 # UI Header
 st.markdown("<h1 style='text-align: center; color: red;'>🔥 Roast 🔥</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center;'>Talk to the bot in ATL slang or type 'Roast me' for a burn! 😂</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Type 'Roast me' for a burn! 😂</h3>", unsafe_allow_html=True)
 
 # Chat Input
 user_input = st.text_input("You: ", "")
@@ -67,4 +67,4 @@ if st.button("Send 🚀"):
 
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 18px; color: white;'>Developed by KRIS | Love & Humor 💙</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 18px; color: black;'>Developed by KRIS | Love & Humor 💙</p>", unsafe_allow_html=True)
