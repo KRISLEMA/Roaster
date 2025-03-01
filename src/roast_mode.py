@@ -65,6 +65,17 @@ roasts = [
     "You got the vibe of a missing sock—lost and never found. 🧦😂",
     "You out here like a malfunctioning vending machine—no one knows what you're about. 🍫😂",
     "Your energy is like dial-up internet—slow, frustrating, and outdated. 🖥️😂"
+    "Bruh, you so broke, even your shadow won’t follow you no more! 💀😂"
+    "Boy, your barber been playing tic-tac-toe on your head! 😂"
+    "You so slow, you took a nap in the middle of a race! 🏁😂"
+    "Bruh, you built like an expired marshmallow—soft and irrelevant. 😭😂"
+    "Boy, you got a personality as exciting as a blank spreadsheet. 📊😂"
+    "You so dumb, you thought a quarterback was a refund. 🏈😂"
+    "You out here lookin' like you still waiting for puberty to call you back. 📞😂"
+    "Man, your Wi-Fi signal got more bars than your sense of humor. 📶😂"
+    "Bruh, you a whole snack… if the snack was moldy bread. 🍞😂"
+    "You got the confidence of a Windows update—nobody asked for it. 💻😂"
+ 
 ]
 
 def get_roast():
